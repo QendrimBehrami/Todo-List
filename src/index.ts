@@ -1,3 +1,3 @@
-import mainController from "./controllers/mainController";
+import { MainController } from "./controllers/mainController";
 
-mainController();
+let mainController = new MainController();
