@@ -1,3 +1,3 @@
-import "./style.css";
+import mainController from "./controllers/mainController";
 
-console.log("Hello, world from index.ts!");
+mainController();

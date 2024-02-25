@@ -7,7 +7,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "Todo List",
-      template: "src/index.html",
+      template: "src/views/index.html",
     }),
   ],
   devtool: "inline-source-map",
@@ -23,9 +23,15 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      // CSS
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
+      },
+      // Fonts
+      {
+        test: /\. (ttf|eot|svg|woff|woff2)$/,
+        type: "asset/resource",
       },
     ],
   },
