@@ -1,17 +1,13 @@
 import { v4 as uuidv4 } from "uuid";
+import { ITodoItem, Priority } from "../interfaces/todo.interface";
 
-enum Priority {
-  Low = "Low",
-  Medium = "Medium",
-  High = "High",
-}
-
-class TodoItem {
+export class TodoItem implements ITodoItem {
   private _id: string;
   private _title: string;
   private _description: string;
   private _dueDate: Date;
   private _priority: Priority;
+  private _completed: boolean;
 
   /**
    * Create a new TodoItem
@@ -31,25 +27,42 @@ class TodoItem {
     this._description = description;
     this._dueDate = dueDate;
     this._priority = priority;
+    this._completed = false;
   }
 
   get id(): string {
-    return this.id;
+    return this._id;
   }
 
-  get title(): string {
+  get title() {
     return this._title;
   }
 
-  get description(): string {
+  get description() {
     return this._description;
   }
 
-  get dueDate(): Date {
+  get dueDate() {
     return this._dueDate;
   }
 
-  get priority(): Priority {
+  get priority() {
     return this._priority;
+  }
+
+  set priority(newPriority: Priority) {
+    this._priority = newPriority;
+  }
+
+  get completed() {
+    return this._completed;
+  }
+
+  set completed(completed: boolean) {
+    this._completed = completed;
+  }
+
+  equals(other: TodoItem) {
+    return this._id === other._id;
   }
 }

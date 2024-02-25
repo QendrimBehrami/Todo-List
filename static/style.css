@@ -7,6 +7,48 @@
 }
 
 body {
-  font-size: 14rem;
   font-family: "Architects Daughter", cursive;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 4rem auto 3rem;
+  grid-template-columns: 10rem auto;
+  grid-template-areas: "nav header" "nav main" "nav footer";
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: header;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  grid-area: footer;
+}
+
+footer a {
+  color: inherit;
+  transition: all 0.7s ease-in-out;
+}
+
+footer a:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+main {
+  grid-area: main;
+}
+
+#sidenav {
+  grid-area: nav;
+  background-color: black;
+  color: white;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
 }
