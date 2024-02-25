@@ -20,14 +20,16 @@ export class TodoItem implements ITodoItem {
     title: string,
     description: string,
     dueDate: Date,
-    priority: Priority = Priority.Medium
+    priority: Priority = Priority.Medium,
+    id = "",
+    completed = false
   ) {
-    this._id = uuidv4();
+    this._id = id ? id : uuidv4();
     this._title = title;
     this._description = description;
     this._dueDate = dueDate;
     this._priority = priority;
-    this._completed = false;
+    this._completed = completed;
   }
 
   get id(): string {

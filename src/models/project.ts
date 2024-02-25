@@ -2,13 +2,13 @@ import { IProject } from "../interfaces/project.interface";
 import { ITodoItem } from "../interfaces/todo.interface";
 import { TodoItem } from "./todoItem";
 
-class Project implements IProject {
+export class Project implements IProject {
   private _todos: TodoItem[];
   private _title: string;
 
-  constructor(title: string) {
+  constructor(title: string, todos: TodoItem[] = []) {
     this._title = title;
-    this._todos = new Array();
+    this._todos = todos ? todos : new Array();
   }
 
   public get title(): string {
