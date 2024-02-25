@@ -9,22 +9,15 @@ export class TodoItem implements ITodoItem {
   private _priority: Priority;
   private _completed: boolean;
 
-  /**
-   * Create a new TodoItem
-   * @param title
-   * @param description
-   * @param dueDate
-   * @param priority
-   */
   constructor(
     title: string,
     description: string,
     dueDate: Date,
     priority: Priority = Priority.Medium,
-    id = "",
+    id?: string,
     completed = false
   ) {
-    this._id = id ? id : uuidv4();
+    this._id = id ?? uuidv4();
     this._title = title;
     this._description = description;
     this._dueDate = dueDate;

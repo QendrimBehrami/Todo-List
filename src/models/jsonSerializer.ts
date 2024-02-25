@@ -1,6 +1,6 @@
-import { Project } from "../models/project";
-import { TodoItem } from "../models/todoItem";
-import { ISerializer } from "./serializer.interface";
+import { Project } from "./project";
+import { TodoItem } from "./todoItem";
+import { ISerializer } from "../interfaces/serializer.interface";
 
 export class JsonProjectSerializer implements ISerializer<Project> {
   serialize(item: Project): string {
@@ -17,7 +17,7 @@ export class JsonProjectSerializer implements ISerializer<Project> {
     const serializer = new JsonTodoItemSerializer();
     let todos = serializer.deserializeArray(JSON.stringify(parsedData._todos));
 
-    return new Project(parsedData._title, todos);
+    return new Project(parsedData._title, todos, parsedData._id);
   }
 
   deserializeArray(data: string): Project[] {

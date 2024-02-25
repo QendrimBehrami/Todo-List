@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`JsonSerializer should serialize an object to JSON 1`] = `"["{\\"_title\\":\\"Important Project\\",\\"_todos\\":[{\\"_id\\":\\"767bc4c1-6d33-4abf-8118-a4f3b657c1cb\\",\\"_title\\":\\"Write Tests\\",\\"_description\\":\\"I need to test the program more...\\",\\"_dueDate\\":\\"2024-02-25T12:31:38.856Z\\",\\"_priority\\":\\"High\\",\\"_completed\\":false}]}"]"`;
