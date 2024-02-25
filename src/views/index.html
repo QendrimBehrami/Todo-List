@@ -9,9 +9,36 @@
     <header><h1>Todo List</h1></header>
 
     <div id="sidenav">
-      <!-- <button id="all-tasks-button"></button>
-      <button id="today-tasks-button"></button> -->
-      sidenav
+      <nav id="page-nav">
+        <h2><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</h2>
+        <div class="page-element rotate-left">
+          <i class="fa-solid fa-list-check"></i>
+          <button id="all-button">All</button>
+        </div>
+        <div class="page-element rotate-right">
+          <i class="fa-solid fa-calendar-day"></i>
+          <button id="today-tasks-button">Today</button>
+        </div>
+        <div class="page-element rotate-left">
+          <i class="fa-solid fa-calendar-week"></i>
+          <button id="week-tasks-button">Week</button>
+        </div>
+        <div class="page-element rotate-right">
+          <i class="fa-solid fa-check"></i>
+          <button id="completed-tasks-button">Completed</button>
+        </div>
+      </nav>
+      <div id="projects">
+        <h2><i class="fa-solid fa-clipboard-list"></i>&nbsp;&nbsp;Projects</h2>
+        <div class="page-element">
+          <i class="fa-solid fa-list"></i>
+          <button id="Homework-button">Homework</button>
+        </div>
+        <div class="page-element rotate-left">
+          <i class="fa-solid fa-plus"></i>
+          <button id="new-project-button">New Project</button>
+        </div>
+      </div>
     </div>
     <main>Hello World</main>
 
