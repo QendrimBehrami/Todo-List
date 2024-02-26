@@ -52,6 +52,18 @@ export class DomManager {
     });
   }
 
+  private createTodoElement(todo: TodoItem) {
+    let todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo-div");
+    todoDiv.id = "todo-div-" + todo.id;
+
+    let titleElement = document.createElement("h2");
+    titleElement.textContent = todo.title;
+
+    todoDiv.appendChild(titleElement);
+    return todoDiv;
+  }
+
   private createProjectElement(project: Project) {
     let projectDiv = document.createElement("div");
     projectDiv.classList.add("project-div");
@@ -59,7 +71,12 @@ export class DomManager {
 
     let titleElement = document.createElement("h1");
     titleElement.textContent = project.title;
+
+    // Handle Todo Array
+    let todoDivs = project.todos.map((todo) => this.createTodoElement(todo));
+
     projectDiv.appendChild(titleElement);
+    todoDivs.forEach((div) => projectDiv.appendChild(div));
     return projectDiv;
   }
 

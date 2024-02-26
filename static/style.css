@@ -147,16 +147,16 @@ main {
 }
 
 .project-div {
-  border-bottom: 1px solid black;
+  border: 1px solid black;
   width: 90%;
   padding-left: 2rem;
-  border-image: linear-gradient(
+  /* border-image: linear-gradient(
       to right,
       transparent -20%,
       #000 50%,
       transparent 120%
     )
-    1 stretch;
+    1 stretch; */
 }
 
 .page-element#new-project-div {
