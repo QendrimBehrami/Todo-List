@@ -4,8 +4,61 @@
     <meta charset="utf-8" />
     <title>Todo List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Hi!</h1>
+    <header><h1>Todo List</h1></header>
+
+    <div id="sidenav">
+      <nav id="page-nav">
+        <h2><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</h2>
+        <div class="page-element rotate-left">
+          <i class="fa-solid fa-list-check"></i>
+          <button class="nav-button" id="all-button">All</button>
+        </div>
+        <div class="page-element rotate-right active">
+          <i class="fa-solid fa-calendar-day"></i>
+          <button class="nav-button" id="today-tasks-button">Today</button>
+        </div>
+        <div class="page-element rotate-left">
+          <i class="fa-solid fa-calendar-week"></i>
+          <button class="nav-button" id="week-tasks-button">Week</button>
+        </div>
+        <div class="page-element rotate-right">
+          <i class="fa-solid fa-check"></i>
+          <button class="nav-button" id="completed-tasks-button">
+            Completed
+          </button>
+        </div>
+      </nav>
+      <div id="projects">
+        <h2><i class="fa-solid fa-clipboard-list"></i>&nbsp;&nbsp;Projects</h2>
+        <div class="page-element active">
+          <i class="fa-solid fa-list"></i>
+          <button id="Homework-button">Homework</button>
+        </div>
+        <div class="page-element rotate-left">
+          <i class="fa-solid fa-plus"></i>
+          <button id="new-project-button">New Project</button>
+        </div>
+      </div>
+    </div>
+    <main>Hello World</main>
+
+    <footer>
+      <h3>
+        &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Qendrim Behrami
+      </h3>
+      <a href="https://github.com/QendrimBehrami/Todo-List" target="_blank">
+        <i class="fab fa-github"></i
+      ></a>
+    </footer>
   </body>
 </html>

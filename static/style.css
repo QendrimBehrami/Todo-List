@@ -1,0 +1,114 @@
+/* Create font face */
+@font-face {
+  font-family: "Architects Daughter";
+  src: url("/static/fonts/ArchitectsDaughter-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Architects Daughter", cursive;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 4rem auto 3rem;
+  grid-template-columns: max(18rem, 20%) auto;
+  grid-template-areas: "nav header" "nav main" "nav footer";
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: header;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  grid-area: footer;
+}
+
+footer a {
+  color: inherit;
+  transition: all 0.7s ease-in-out;
+}
+
+footer a:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+main {
+  grid-area: main;
+}
+
+#sidenav {
+  grid-area: nav;
+  background-color: #e4e4e4;
+
+  color: black;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.nav-button,
+#projects button {
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.5rem;
+}
+
+.page-element.active {
+  border-bottom: solid 2px transparent;
+  border-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 50%,
+      transparent 100%
+    )
+    1 stretch;
+}
+
+.rotate-left:hover {
+  font-style: italic;
+  transform: scale(1.2) rotate(-5deg);
+}
+
+.rotate-right:hover {
+  font-style: italic;
+  transform: scale(1.2) rotate(5deg);
+}
+
+#sidenav h2,
+#projects h2 {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+#page-nav,
+#projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#projects > .page-element,
+#page-nav > .page-element {
+  display: inline-block;
+  width: fit-content;
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+#projects h2 {
+  margin-top: 10rem;
+}
