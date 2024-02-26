@@ -6,13 +6,17 @@
   font-style: normal;
 }
 
+:root {
+  --background-alt: #e4e4e4;
+}
+
 body {
   font-family: "Architects Daughter", cursive;
   height: 100vh;
   display: grid;
-  grid-template-rows: 4rem auto 3rem;
+  grid-template-rows: 8rem auto 3rem;
   grid-template-columns: max(18rem, 20%) auto;
-  grid-template-areas: "nav header" "nav main" "nav footer";
+  grid-template-areas: "header main" "nav main" "footer main";
   margin: 0;
   padding: 0;
 }
@@ -22,6 +26,19 @@ header {
   justify-content: center;
   align-items: center;
   grid-area: header;
+  background-color: var(--background-alt);
+}
+
+header > h1 {
+  padding: 20px;
+  border-bottom: 2px solid black;
+  border-image: linear-gradient(
+      to right,
+      transparent -30%,
+      #666 50%,
+      transparent 130%
+    )
+    1 stretch;
 }
 
 footer {
@@ -30,11 +47,14 @@ footer {
   align-items: center;
   gap: 1rem;
   grid-area: footer;
+  background-color: var(--background-alt);
+  font-size: 0.8rem;
 }
 
 footer a {
   color: inherit;
   transition: all 0.7s ease-in-out;
+  font-size: 1.2rem;
 }
 
 footer a:hover {
@@ -43,17 +63,15 @@ footer a:hover {
 
 main {
   grid-area: main;
+  padding: 2rem;
 }
 
 #sidenav {
   grid-area: nav;
-  background-color: #e4e4e4;
+  background-color: var(--background-alt);
 
   color: black;
-  padding-top: 4rem;
-  padding-bottom: 3rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 2rem;
 }
 
 .nav-button,
@@ -110,5 +128,30 @@ main {
 }
 
 #projects h2 {
-  margin-top: 10rem;
+  margin-top: 4rem;
+}
+
+#new-project-div > form {
+  display: none;
+}
+
+#project-overview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.project-div {
+  border-bottom: 1px solid black;
+  width: 90%;
+  padding-left: 2rem;
+  border-image: linear-gradient(
+      to right,
+      transparent -20%,
+      #000 50%,
+      transparent 120%
+    )
+    1 stretch;
 }
