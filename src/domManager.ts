@@ -3,13 +3,15 @@ import { ProjectManager } from "./projectManager";
 
 export class DomManager {
   private projectManager: ProjectManager;
-  private projectOverview: HTMLDivElement;
+  private projectsDiv: HTMLDivElement; // Elements in main
+  private projectOverview: HTMLDivElement; // Elements in sidebar
   private projectFilter: () => Project[];
 
   constructor(projectManager: ProjectManager) {
     this.projectManager = projectManager;
+    this.projectsDiv = document.querySelector("#projects") as HTMLDivElement;
     this.projectOverview = document.querySelector(
-      "#project-overview"
+      "#project-elements"
     ) as HTMLDivElement;
     this.projectFilter = projectManager.getAllProjects.bind(projectManager);
 
@@ -53,7 +55,7 @@ export class DomManager {
   private createProjectElement(project: Project) {
     let projectDiv = document.createElement("div");
     projectDiv.classList.add("project-div");
-    projectDiv.id = project.id;
+    projectDiv.id = "project-div-" + project.id;
 
     let titleElement = document.createElement("h1");
     titleElement.textContent = project.title;
@@ -61,20 +63,55 @@ export class DomManager {
     return projectDiv;
   }
 
+  private createProjectOverviewElement(project: Project) {
+    // Create the div
+    let projectDiv = document.createElement("div");
+    projectDiv.classList.add("page-element");
+
+    // Set Icon
+    let icon = document.createElement("i");
+    icon.classList.add("fa-solid");
+    icon.classList.add("fa-list");
+
+    // Add Selection Button
+    let button = document.createElement("button");
+    button.id = "project-button-" + project.id;
+    button.textContent = project.title;
+
+    // Add everything to project div
+    projectDiv.appendChild(icon);
+    projectDiv.appendChild(button);
+
+    return projectDiv;
+  }
+
   render() {
     const projects = this.projectFilter();
 
-    const projectDivs = projects.map((project) =>
-      this.createProjectElement(project)
-    );
-
     // Clear old content
+    while (this.projectsDiv.firstChild) {
+      this.projectsDiv.removeChild(this.projectsDiv.firstChild);
+    }
+
     while (this.projectOverview.firstChild) {
       this.projectOverview.removeChild(this.projectOverview.firstChild);
     }
 
+    // Create new content
+    const projectDivs = projects.map((project) =>
+      this.createProjectElement(project)
+    );
+
+    const projectOverviewDivs = projects.map((project) =>
+      this.createProjectOverviewElement(project)
+    );
+
     // Append new content
     projectDivs.forEach((div) => {
+      this.projectsDiv.appendChild(div);
+    });
+
+    projectOverviewDivs.forEach((div) => {
       this.projectOverview.appendChild(div);
     });
   }

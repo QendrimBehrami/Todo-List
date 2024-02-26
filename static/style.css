@@ -15,7 +15,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: 8rem auto 3rem;
-  grid-template-columns: max(18rem, 20%) auto;
+  grid-template-columns: max(20rem, 20%) auto;
   grid-template-areas: "header main" "nav main" "footer main";
   margin: 0;
   padding: 0;
@@ -75,7 +75,7 @@ main {
 }
 
 .nav-button,
-#projects button {
+#projects-overview button {
   background-color: inherit;
   color: inherit;
   border: none;
@@ -106,28 +106,31 @@ main {
 }
 
 #sidenav h2,
-#projects h2 {
+#projects-overview h2 {
   font-size: 2rem;
   margin-bottom: 0.3rem;
 }
 
 #page-nav,
-#projects {
+#projects-overview {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-#projects > .page-element,
+#projects-overview .page-element,
 #page-nav > .page-element {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 2rem auto;
   width: fit-content;
   font-size: 1.5rem;
   margin-left: 2rem;
   padding-bottom: 0.5rem;
+  align-items: center;
+  text-wrap: pretty;
 }
 
-#projects h2 {
+#projects-overview h2 {
   margin-top: 4rem;
 }
 
@@ -135,7 +138,7 @@ main {
   display: none;
 }
 
-#project-overview {
+#projects {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -154,4 +157,8 @@ main {
       transparent 120%
     )
     1 stretch;
+}
+
+.page-element#new-project-div {
+  display: inline-block;
 }

@@ -13,11 +13,11 @@ export class ProjectManager {
     return project.id;
   }
 
-  //   push(project: Project) {
-  //     if (!this.containsProject) {
-  //       this._projects.push(project);
-  //     }
-  //   }
+  push(project: Project) {
+    if (!this.containsProject) {
+      this._projects.push(project);
+    }
+  }
 
   private containsProject(project: Project): boolean {
     return this._projects.filter((p) => p.id === project.id).length > 0;

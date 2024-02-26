@@ -7,4 +7,5 @@ let dom = new DomManager(projectManager);
 
 let grocery = projectManager.createProject("Grocery List");
 let gym = projectManager.createProject("Gym");
+
 dom.render();
